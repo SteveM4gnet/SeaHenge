@@ -1,6 +1,8 @@
 <html>
 <link rel="stylesheet" type="text/css" href="res/css/home.css">
+<link rel="stylesheet" type="text/css" href="res/css/projects.css">
 <link rel="stylesheet" type="text/css" href="res/css/planet.css">
+<link rel="stylesheet" type="text/css" href="res/css/slides.css">
 <script src="res/script/home.js"></script>
 <script src="res/script/adjective_generator.js"></script>
 <script src="res/script/rotateButtons.js"></script>
@@ -53,7 +55,7 @@
 <div class="gradient macc"></div>
 <img class="backgroundImage" src="res/textures/background/stonehenge_sunset.jpg">
 	<div class="vignette"></div>
-<div class="planet_menu">
+<div class="planet_menu" id="planetMenu">
 	<div class="planet_north">
 		<div class="shade" id="top"></div><div class="fade" id="top"></div>
 		<div class="hemispheres">
@@ -75,13 +77,16 @@
 
 
 	<div class="orbitalButtons" id="orbitalButtons">	
-		<button onclick="buttonClick()"class="orbitButton" id="projects">Projects</button>
-		<button onclick="buttonClick()"class="orbitButton" id="css">CSS</button>
+		<button onclick="buttonClick()"class="orbitButton" id="downloads">Downloads</button>
+		<button onclick="buttonClick()"class="orbitButton" id="modding">Modding</button>
 		<button onclick="buttonClick()"class="orbitButton" id="about">About me</button>
 		<button onclick="buttonClick()"class="orbitButton" id="javaScript">JavaScript</button>
 		<button onclick="buttonClick()"class="orbitButton" id="graphics">Graphics</button>
 		<button onclick="buttonClick()"class="orbitButton" id="video">Videos</button>
 		<button onclick="buttonClick()"class="orbitButton" id="music">Music</button>
+	</div>
+	<div class="back" id="back">
+		<p>back</p>
 	</div>
 </div>
 
@@ -92,8 +97,10 @@
 	<p id="button_state_left"></p>
 	<p id="button_state_right"></p>
 </div>
+<div class="current-container">
+<p id="currentSlide" class="current-title"></p>
 </div>
 </div>
-
+</div>
 </body>
 </html>
