@@ -1,0 +1,68 @@
+.projectsHeader
+{
+	position:absolute;
+	top:0;
+	left:50%;
+	height:10%;
+	text-align:center;
+	transform:translate(-50%,0);
+	font-size:6vh;
+	color:#eee;
+	text-shadow:0 0 0.5vh rgba(0,0,0,1);
+}
+
+.projects_container
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	background-color:#fff;
+	width:50%;
+}
+
+.projects
+{
+	display:inline-block;
+	width:40%;
+	
+}
+
+.project_name
+{
+	position:absolute;
+	z-index:2;
+	background-color:rgba(0,0,0,0.6);
+	text-align:center;
+	width:40%;
+	color:#fff;
+	height:5vh;
+	line-height:5vh;
+	font-family:arial;
+	transform:translate(0%,-100%);
+	pointer-events:none;
+}
+
+.projects iframe
+{
+	width:100%;
+	height:30%;
+	border:none;
+	left:50%;
+	margin-left:50%;
+	transform:translate(-50%,0);
+	transition:0.3s;
+	filter:grayscale(70%) blur(1px);
+	
+}
+
+.projects iframe:hover
+{
+	width:100%;
+	filter:none;
+}
+
+.projects p
+{
+	display:none;
+}

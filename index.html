@@ -1,0 +1,100 @@
+<html>
+<link rel="stylesheet" type="text/css" href="res/css/home.css">
+<link rel="stylesheet" type="text/css" href="res/css/projects.css">
+<link rel="stylesheet" type="text/css" href="res/css/planet.css">
+<script src="res/script/home.js"></script>
+<script src="res/script/adjective_generator.js"></script>
+<script src="res/script/rotateButtons.js"></script>
+<head>
+<title>Steve Whitehouse</title>
+</head>
+<body onload="adjGenerator(), initScale()">
+<p id="dataDump"></p>
+<p id="dataDump2"></p>
+<div id="topside" class="topSide">
+	<div class="gradient"></div>
+	<img id="bgImage" class="backgroundImage" src="res/textures/background/stonehenge.jpg">
+	<div class="vignette"></div>
+	<div class="heading">
+		<p class="heading">Heyo, I'm Steve</p>
+	</div>
+
+	<div id="rawAdj">
+		<p id="adj0"> javaScript developer</p>
+		<p id="adj1"> C# developer</p>
+		<p id="adj2"> CSS developer</p>
+		<p id="adj3"> front-end web developer</p>
+		<p id="adj4">n avid web developer</p>
+		<p id="adj5"> passionate developer</p>
+		<p id="adj6"> scripter, modder and developer</p>
+		<p id="adj7"> chubby man</p>
+	</div>
+
+	<div class="bio">
+		<p class="about">I am a<txt id="adjective"></txt>.</p>
+	</div>
+
+	<div class="mainText" id="mainText">
+		<p>I enjoy designing websites, apps and just messing with code in general.
+		I am a self-taught kinda guy and I have a firm belief in really getting to
+		know the language.</br></br>
+		So click below to see what I can do, and if you want me to do it for you.
+		</p>
+	</div>
+	
+	<div>
+		<button class="intro" onclick="introAnimation()">Show me</button>
+	</div>
+</div>
+
+<!------------------------------------------ MENU SCREEN ---------------------------------------------------->
+
+<div id="mask" class="mask">
+<div class="underside">
+<div class="gradient macc"></div>
+<img class="backgroundImage" src="res/textures/background/stonehenge_sunset.jpg">
+	<div class="vignette"></div>
+<div class="planet_menu">
+	<div class="planet_north">
+		<div class="shade" id="top"></div><div class="fade" id="top"></div>
+		<div class="hemispheres">
+			<div class="north">
+				<img src="res/textures/globe/north.png">
+			</div>		
+		</div>
+	</div>
+
+	<div class="planet_south">
+	<div class="shade" id="bottom"></div><div class="fade" id="bottom"></div>
+		<div class="hemispheres">
+			<div class="south">
+				<img src="res/textures/globe/south.png">
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="orbitalButtons" id="orbitalButtons">	
+		<button onclick="buttonClick()"class="orbitButton" id="projects">Projects</button>
+		<button onclick="buttonClick()"class="orbitButton" id="css">CSS</button>
+		<button onclick="buttonClick()"class="orbitButton" id="about">About me</button>
+		<button onclick="buttonClick()"class="orbitButton" id="javaScript">JavaScript</button>
+		<button onclick="buttonClick()"class="orbitButton" id="graphics">Graphics</button>
+		<button onclick="buttonClick()"class="orbitButton" id="video">Videos</button>
+		<button onclick="buttonClick()"class="orbitButton" id="music">Music</button>
+	</div>
+</div>
+
+<div id="navButtons" class="navButtons">
+	<button class="navButtonLeft" onclick="rotateLeft()" id="rotate_left"></button>
+	<button class="navButtonRight" onclick="rotateRight()" id="rotate_right"></button>
+	</br>
+	<p id="button_state_left"></p>
+	<p id="button_state_right"></p>
+</div>
+</div>
+</div>
+
+</body>
+</html>

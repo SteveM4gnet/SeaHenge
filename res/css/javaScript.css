@@ -1,0 +1,83 @@
+body
+{
+	background-color:#eee;	
+}
+
+#dataDump, #debug
+{
+	opacity:0;
+	font-size:0;
+}
+
+h1
+{
+	text-align:center;
+	font-family:arial;
+	font-variant:small-caps;
+	color:#222;
+}
+
+.function
+{
+	display:inline-block;
+	width:30vw;
+	height:20vh;
+	background-color:#fff;
+	overflow:hidden;
+	text-align:center;
+	margin-left:2vw;
+	user-select:none;
+}
+
+.functionName
+{
+	position:absolute;
+	background-color:#0af;
+	width:30vw;
+	color:#fff;
+	font-family:arial;
+	transform:translate(-50%,0);
+	border:none;
+}
+
+.functionName:hover
+{
+	background-color:#0ce;
+}
+
+.functionName:active
+{
+	background-color:#0ef;
+}
+
+.functionDesc
+{
+	margin:15%;
+	font-family:arial;
+}
+
+.functionContent
+{
+	opacity:0;
+	position:absolute;
+	text-align:left;
+	left:25%;
+	top:0vh;
+	width:50%;
+	background-color:#fff;
+	padding:1%;
+	transform:perspective(1000px) rotateY(90deg);
+	transition:0.2s;
+}
+
+.functionContent_show_detectBrowserIE, .functionContent_show_rotateButtons, .functionContent_show_expandFunction
+{
+	opacity:1;
+	top:30vh;
+	transform:perspective(1000px) rotateY(0deg)
+}
+
+.functionName_locked
+{
+	opacity:0.5;
+}

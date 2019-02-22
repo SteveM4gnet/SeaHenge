@@ -1,0 +1,443 @@
+#dataDump, #dataDump2, #button_state_left, #button_state_right
+{
+	color:rgba(255,255,255,0);
+	font-size:0vh;
+}
+
+button:focus
+{
+	outline:none;
+}
+
+*
+{
+	user-select:none;
+}
+
+.planet_menu
+{
+	position:absolute;
+	top:30%;
+	left:50%;
+	transform:translate(-50%, -50%) scale(0.9,0.9);
+}
+
+.planet_menu_reflection
+{
+	position:absolute;
+	top:100%;
+	left:50%;
+	transform:translate(-50%, -50%) scale(1,-1);
+	z-index:-10;
+	opacity:0.4;
+}
+
+.navButtonLeft_dim, .navButtonRight_dim
+{
+	transform:scale(0,0);
+}
+
+.navButtons
+{
+	position:absolute;
+	top:60%;
+	left:50%;
+	width:10%;
+	z-index:-50;
+	transform:translate(-50%, -50%);
+	opacity:0;
+}
+
+.navButtons button, .startButton button
+{
+	display:inline-block;
+	width:10vh;
+	height:10vh;
+	background-color:rgba(0,0,0,0);
+	opacity:1;
+	border-top:5vh solid transparent;
+	border-bottom: 5vh solid transparent;
+	transition:0.2s;
+}
+
+button.navButtonLeft:active, button.navButtonRight:active
+{
+	transform:scale(0.8,0.8);
+}
+
+button.navButtonLeft
+{
+	float: right;
+	border-left: 10vh solid #fff;
+	border-right:none;
+}
+button.navButtonRight
+{
+	float: left;
+	border-right: 10vh solid #fff;
+	border-left:none;
+}
+
+.navButtonLeft:hover
+{
+	border-left: 10vh solid #fff;
+}
+
+.navButtonRight:hover
+{
+	border-right: 10vh solid #fff;
+}
+
+.navButtons_enter
+{
+	animation:enter_navButtons 1s cubic-bezier(.17,.53,.37,1) forwards;
+}
+
+.startButton
+{
+	position:absolute;
+	bottom:10%;
+	left:50%;
+	transform:translate(-50%, -10%);
+	animation:enter_start 2.5s ease-out forwards;
+}
+
+@keyframes enter_navButtons
+{
+	0%
+	{
+		width:100%;
+		z-index:1;
+		opacity:0;
+	}
+	
+	90%
+	{
+	}
+
+	100%
+	{
+		z-index:inherit;
+		width:75%;
+		opacity:1;
+	}
+}
+
+@keyframes enter_start
+{
+	0%
+	{
+		bottom:-10%;
+	}
+
+	90%
+	{
+		bottom:-10%;
+	}
+	
+	100%
+	{
+		bottom:10%;
+	}
+}
+
+.startButton_leave
+{
+	animation:leave_start 0.5s ease-in forwards;
+}
+
+@keyframes leave_start
+{
+	0%
+	{
+		bottom:10%;
+	}
+	
+	100%
+	{
+		bottom:-10%;
+	}
+}
+
+.planet_north, .planet_south
+{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -100%);
+	height:17.5vh;
+	width:35vh;	
+	overflow:hidden;
+}
+
+.planet_north
+{
+	transform: translate(-50%, -100%);
+	z-index:2;
+	border-top-left-radius: 50vh;
+	border-top-right-radius: 50vh;
+}
+
+.planet_south
+{
+	transform: translate(-50%, -1%);
+	border-bottom-left-radius: 50vh;
+	border-bottom-right-radius: 50vh;
+	z-index:0;
+}
+
+.shade, .fade
+{
+	position:absolute;	
+	height:101%;
+	width:100%;
+	z-index:3;
+}
+
+.shade#bottom
+{
+	background-image: radial-gradient(circle at top right, rgba(0,0,0,0)5%, rgba(0,0,0,0.8) 80%);
+}
+
+.shade#top
+{
+	background-image: radial-gradient(circle at bottom right, rgba(0,0,0,0)5%, rgba(0,0,0,0.8) 80%);
+}
+
+.fade#bottom
+{
+	background-image: radial-gradient(circle at top left, rgba(0,0,0,0)5%, #878AB5 100%);
+}
+
+
+.fade#top
+{
+	background-image: radial-gradient(circle at bottom left, rgba(0,0,0,0)5%, #878AB5 100%);
+}
+
+
+.hemispheres
+{
+	transform:translate(0%, 0%);
+}
+
+.north img, .south img
+{
+	transform:translate(0%, 0%);
+	animation:spin 20s linear infinite;
+	z-index:0;
+	height:20vh;
+}
+
+.north
+{
+	margin-top:-5vh;
+	transform:perspective(2.5vh) rotateX(5deg);
+}
+
+.south
+{
+	margin-top:5vh;
+	transform:perspective(2.5vh) rotateX(-5deg);
+}
+
+@keyframes spin
+{
+	100%
+	{
+		transform:translate(-20%, 0%);
+	}
+	
+	0%
+	{
+		transform:translate(-70%, 0%);
+	}
+}
+
+.orbitalButtons, .orbitalButtons_reflection 
+{
+	position:absolute;
+	top:50%;
+	left:50%;	
+	height:50vh;
+	width:50vh;
+	border-radius:50vh;
+	transition:0.15s;
+	/*background-color:#f00;*/
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(70deg) rotate(0deg);
+}
+
+.orbitalButtonsIntro, .orbitalButtonsIntro_reflection
+{
+	animation:orbitalButtonsIntro 2.5s cubic-bezier(.08,.36,.33,.97) forwards;
+	transition:0.8s;
+}
+
+.orbitalButtonsClicked
+{
+	width:60%;
+	height:60%;
+}
+
+@keyframes orbitalButtonsIntro
+{
+	0%
+	{
+		opacity:0;
+		position:absolute;
+		top:50%;
+		left:50%;	
+		height:150vh;
+		width:150vh;
+		border-radius:50vh;
+		transform:translate(-50%, -50%) perspective(100vh) rotateX(90deg) rotate(1000deg);	
+	}
+	
+	80%
+	{
+		opacity:1;
+		position:absolute;
+		top:50%;
+		left:50%;	
+		height:50vh;
+		width:50vh;
+		border-radius:50vh;
+		transform:translate(-50%, -50%) perspective(100vh) rotateX(70deg) rotate(360deg);
+	}
+	100%
+	{
+		opacity:1;
+		position:absolute;
+		top:50%;
+		left:50%;	
+		height:45vh;
+		width:45vh;
+		border-radius:50vh;
+		transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(360deg);
+	}
+}
+
+.orbitalButtons_pos_1
+{
+	width:45vh;
+	height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(135deg);
+}
+
+.orbitalButtons_pos_2
+{
+	width:45vh;height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(90deg);
+}
+
+.orbitalButtons_pos_3
+{
+	width:45vh;
+	height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(45deg);
+}
+
+.orbitalButtons_pos_4
+{
+	width:45vh;
+	height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(0deg);
+}
+
+.orbitalButtons_pos_5
+{
+	width:45vh;
+	height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(-45deg);
+}
+
+.orbitalButtons_pos_6
+{
+	width:45vh;
+	height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(-90deg);
+}
+
+.orbitalButtons_pos_7
+{
+	width:45vh;
+	height:45vh;
+	transform:translate(-50%, -50%) perspective(100vh) rotateX(45deg) rotate(-135deg);
+}
+
+#graphics
+{
+	margin-left:72.5%;
+	margin-top:10%;
+	transform:rotate(-135deg) perspective(100vh);
+	opacity:0.4;
+}
+
+#music
+{
+	margin-left:87.5%;
+	margin-top:45%;
+	transform:rotate(270deg) perspective(100vh);
+	opacity:0.4;
+}
+
+#video
+{
+	margin-left:2.5%;
+	margin-top:10%;
+	transform:rotate(135deg) perspective(100vh);
+	opacity:0.4;
+}
+
+#projects
+{
+	margin-left:-12.5%;
+	margin-top:45%;
+	transform:rotate(90deg) perspective(100vh);
+	opacity:0.4;
+}
+
+#css
+{
+	margin-top:80%;
+	margin-left:72.5%;
+	transform:rotate(315deg) perspective(100vh);
+}
+
+#about
+{
+	margin-left:37.5%;
+	margin-top:95%;
+	transform:rotate(0deg) perspective(100vh);
+}
+
+#about:hover, #css:hover, #projects:hover, #video:hover, #music:hover, #javaScript:hover, #graphics:hover
+{
+	cursor:pointer;
+	border-radius: 5vh;
+}
+
+#about:active, #css:active, #projects:active, #video:active, #music:active, #javaScript:active, #graphics:active
+{
+	height:12.5%;
+	border-radius: 5vh;
+}
+
+#javaScript
+{
+	margin-left:2.5%;
+	margin-top:80%;
+	transform:rotate(45deg) perspective(100vh);
+}
+
+button.orbitButton
+{
+	position:absolute;
+	width:25%;
+	background-color:#f00;
+	border:none;
+	height:10%;
+	color:#fff;
+	font-size:1.5vh;
+	transition:0.1s;
+}

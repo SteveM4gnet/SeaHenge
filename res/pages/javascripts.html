@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<link rel="stylesheet" type="text/css" href="../css/javaScript.css">
+<script src="../script/javaScript.js"></script>
+<head>
+<title>JavaScript Examples</title>
+</head>
+<body onload="firstClick()">
+<h1 id="h1">Click on a function to expand it</h1>
+<p id="dataDump"></p>
+<div class="function" id="detectIE">
+	<button id="toClick" class="functionName" onclick="expandFunction()" tabindex="1"><p><b>function</b> detectBrowserIE()</p></button>
+	<div class="functionDesc">Detects browser that the user is using through elimination and saves to variable through .innerHTML</div>
+	<div id="detectBrowserIE" class="functionContent">
+	<pre><code>
+	function checkBrowserIE()
+	{
+	document.getElementById("dataDump").innerHTML = "java = " + navigator.javaEnabled();
+	if (navigator.javaEnabled() == true)
+	{
+		document.getElementById("dataDump").innerHTML += "edge";
+		var isIE = String(navigator.appVersion);
+		document.getElementById("dataDump").innerHTML += isIE;
+		var detect = isIE.indexOf("Trident");
+		document.getElementById("dataDump").innerHTML += detect;
+		
+		if (detect > 0)
+		{
+			document.getElementById("dataDump").innerHTML = "IE";
+		}
+		else
+		{
+			document.getElementById("dataDump").innerHTML = "EDGE";
+		}
+		
+	}
+	else
+	{
+		document.getElementById("dataDump").innerHTML += "CHROME";
+	}
+	
+	var browserVER = document.getElementById("dataDump").innerHTML;
+	if (browserVER == "IE")
+		{
+		location.href = "index_IE.html";
+		}
+	if (browserVER == "EDGE")
+		{
+		location.href = "index_EDGE.html";
+		}
+	}
+	</pre></code>
+	</div>
+</div>
+
+
+<div class="function">
+	<button class="functionName" onclick="expandFunction()"><p><b>function</b> rotateButtons()</p></button>
+	<div class="functionDesc">Allows stepping through buttons on a 3D plane using element.classList.trigger("class_name")</div>
+	<div id="rotateButtons" class="functionContent">
+	<pre><code>
+	function rotateLeft()
+{	
+	
+	//setting navButtons to dim at END NO CLICK
+	var navButtonLeft = document.getElementById("rotate_left");
+	var navButtonRight = document.getElementById("rotate_right");
+	document.getElementById("dataDump2").innerHTML = navButtonLeft.classList + navButtonRight.classList;
+	
+	
+	var rotateLeft = document.querySelector('#rotate_left');
+	var buttonLeftState = document.getElementById("button_state_left").innerHTML;
+	var buttonRightState = document.getElementById("button_state_right").innerHTML;
+	var orbitalButtons =  document.getElementById("orbitalButtons");
+	orbitalButtons.className = "orbitalButtons";
+	var orbitalButtons_reflection =  document.getElementById("orbitalButtons_reflection");
+	orbitalButtons_reflection.className = "orbitalButtons_reflection";
+	var currentDeg = 0;
+	
+	if (buttonLeftState == "turn_left_7")
+	{
+		document.getElementById("button_state_left").innerHTML = "turn_left_6";
+		document.getElementById("button_state_right").innerHTML = "turn_right_2";
+		orbitalButtons.classList.toggle("orbitalButtons_pos_6");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_6");
+		navButtonRight.classList.toggle("navButtonRight_dim");
+	}
+	
+	if (buttonLeftState == "turn_left_6")
+	{
+		document.getElementById("button_state_left").innerHTML = "turn_left_5";
+		document.getElementById("button_state_right").innerHTML = "turn_right_3";
+		orbitalButtons.classList.toggle("orbitalButtons_pos_5");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_5");
+	}
+
+	if (buttonLeftState == "turn_left_5")
+	{
+		document.getElementById("button_state_left").innerHTML = "turn_left_4";
+		document.getElementById("button_state_right").innerHTML = "turn_right_4";
+		orbitalButtons.classList.toggle("orbitalButtons_pos_4");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_4");
+	}
+	
+	if (buttonLeftState == "turn_left_4")
+	{
+		document.getElementById("button_state_left").innerHTML = "turn_left_3";
+		document.getElementById("button_state_right").innerHTML = "turn_right_5";
+		orbitalButtons.classList.toggle("orbitalButtons_pos_3");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_3");
+	}
+
+	if (buttonLeftState == "turn_left_3")
+	{
+		document.getElementById("button_state_left").innerHTML = "turn_left_2";
+		document.getElementById("button_state_right").innerHTML = "turn_right_6";
+		orbitalButtons.classList.toggle("orbitalButtons_pos_2");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_2");
+	}
+
+	if (buttonLeftState == "turn_left_2")
+	{
+		document.getElementById("button_state_left").innerHTML = "END NO CLICK";
+		document.getElementById("button_state_right").innerHTML = "turn_right_7";
+		orbitalButtons.classList.toggle("orbitalButtons_pos_1");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_1");
+		navButtonLeft.classList.toggle("navButtonLeft_dim");
+	}
+	
+	if (buttonLeftState == "END NO CLICK")
+	{
+		orbitalButtons.classList.toggle("orbitalButtons_pos_1");
+		orbitalButtons_reflection.classList.toggle("orbitalButtons_pos_1");
+	}
+	
+}
+	</pre></code>
+	</div>
+</div>
+	
+	
+<div class="function">
+	<button class="functionName" onclick="expandFunction()"><p><b>function</b> expandFunction()</p></button>
+	<div class="functionDesc">Shows the functions you are seeing on this very page.</div>
+	<div id="expandFunction" class="functionContent">
+	<pre><code>
+	function expandFunction()
+{
+	var prevButton = document.getElementById("dataDump").innerHTML;	
+	var clickedButton = document.activeElement.innerHTML.split("()").slice(0,-1);
+	var clickedButton = String(clickedButton).substr(19);
+	document.getElementById("dataDump").innerHTML = clickedButton;
+	var isShowFunction = document.getElementById(clickedButton);
+
+	if (prevButton == clickedButton || prevButton == "")
+	{	
+		var showFunction = document.getElementById(clickedButton);	
+		showFunction.classList.toggle("functionContent_show_" + clickedButton);
+		document.getElementById("if status").innerHTML = "if triggered";
+	}
+	else
+	{
+		var showFunction = document.getElementById(prevButton);	
+		showFunction.classList.toggle("functionContent_show_" + prevButton);
+		var showFunction = document.getElementById(clickedButton);	
+		showFunction.classList.toggle("functionContent_show_" + clickedButton);		
+	}
+}
+	</pre></code>
+	</div>
+</div>
+</body>
