@@ -19,7 +19,8 @@ button:focus
 	position:absolute;
 	top:30%;
 	left:50%;
-	transform:translate(-50%, -50%) scale(0.9,0.9);
+	transform:scale(1,1);
+	transition:0.9s;
 }
 
 .planet_menu_reflection
@@ -93,6 +94,11 @@ button.navButtonRight
 	animation:enter_navButtons 1s cubic-bezier(.17,.53,.37,1) forwards;
 }
 
+.navButtons_exit
+{
+	animation:exit_navButtons 1s cubic-bezier(.17,.53,.37,1)forwards;
+}
+
 .startButton
 {
 	position:absolute;
@@ -110,16 +116,29 @@ button.navButtonRight
 		z-index:1;
 		opacity:0;
 	}
-	
-	90%
-	{
-	}
 
 	100%
 	{
 		z-index:inherit;
 		width:75%;
 		opacity:1;
+	}
+}
+
+@keyframes exit_navButtons
+{
+	0%
+	{		
+		z-index:inherit;
+		width:75%;
+		opacity:1;
+	}
+
+	100%
+	{
+		width:100%;
+		z-index:1;
+		opacity:0;
 	}
 }
 
@@ -366,39 +385,40 @@ button.navButtonRight
 }
 
 #graphics
-{
+{	
+	top:0%;
 	margin-left:72.5%;
 	margin-top:10%;
 	transform:rotate(-135deg) perspective(100vh);
-	opacity:0.4;
 }
 
 #music
 {
+	top:0%;
 	margin-left:87.5%;
 	margin-top:45%;
 	transform:rotate(270deg) perspective(100vh);
-	opacity:0.4;
 }
 
 #video
 {
+	top:0%;
 	margin-left:2.5%;
 	margin-top:10%;
 	transform:rotate(135deg) perspective(100vh);
-	opacity:0.4;
 }
 
-#projects
+#downloads
 {
+	top:0%;
 	margin-left:-12.5%;
 	margin-top:45%;
 	transform:rotate(90deg) perspective(100vh);
-	opacity:0.4;
 }
 
-#css
+#modding
 {
+	top:0%;
 	margin-top:80%;
 	margin-left:72.5%;
 	transform:rotate(315deg) perspective(100vh);
@@ -406,25 +426,27 @@ button.navButtonRight
 
 #about
 {
+	top:0%;
 	margin-left:37.5%;
 	margin-top:95%;
 	transform:rotate(0deg) perspective(100vh);
 }
 
-#about:hover, #css:hover, #projects:hover, #video:hover, #music:hover, #javaScript:hover, #graphics:hover
+#about:hover, #modding:hover, #downloads:hover, #video:hover, #music:hover, #javaScript:hover, #graphics:hover
 {
 	cursor:pointer;
 	border-radius: 5vh;
 }
 
-#about:active, #css:active, #projects:active, #video:active, #music:active, #javaScript:active, #graphics:active
+#about:active, #modding:active, #downloads:active, #video:active, #music:active, #javaScript:active, #graphics:active
 {
-	height:12.5%;
+	top:1.5%;
 	border-radius: 5vh;
 }
 
 #javaScript
 {
+	top:0%;
 	margin-left:2.5%;
 	margin-top:80%;
 	transform:rotate(45deg) perspective(100vh);

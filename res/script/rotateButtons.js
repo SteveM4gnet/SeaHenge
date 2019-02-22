@@ -1,6 +1,7 @@
 function buttonClick()
 {
-
+	var buttonClicked = document.activeElement.innerHTML;
+	loadSlide(buttonClicked);
 }
 
 function introAnimation()
