@@ -1,0 +1,160 @@
+body
+{
+	position:absolute;
+	width:100%;
+	max-width:150vh;
+	height:100%;
+	margin:0;
+	top:0;
+	left:50%;
+	overflow:hidden;
+	transform:translate(-50%,0);
+}
+
+#twitterIcon
+{
+	position:absolute;
+	height:100%;
+	transition:0.1s;
+}
+
+#profilePic
+{
+	position:absolute;
+	overflow:hidden;
+	width:14vh;
+	height:14vh;
+	border-radius:10vh;
+	border:#fff 1vh solid;
+	top:2.5vh;
+	left:2.5vh;
+	z-index:200;
+	box-sizing: border-box;
+}
+
+#profilePic div
+{
+	background:#aaa;
+	height:100%;
+	width:100%;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+#profilePic div p
+{
+	color:#fff;
+	text-align:center;
+	padding:0;
+	margin:0;
+	width:100%;
+	position:absolute;
+	line-height:100%;
+	font-size:3vh;
+}
+
+#twitterIcon:hover
+{
+	height:110%;
+	opacity:0;
+}
+
+#banner
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:10%;
+	background:#3D7FAF;
+}
+
+#bannerText
+{
+	position:absolute;
+	left:20vh;
+	top:50%;
+	transform:translate(-0%,-50%);
+}
+
+#bannerText p
+{
+	color:#fff;
+	font-size:5vh;
+}
+
+#bannerButtons
+{
+	position:absolute;
+	right:5vw;
+	bottom:0;
+	height:50%;
+	width:50%;
+}
+
+#bannerButtons button
+{
+	width:25%;
+	display:inline-block;
+	margin-left:-4px;
+	height:100%;
+	border:white 0.25vh solid;
+	border-bottom:none;
+	box-sizing: border-box;
+	background-color:#3D7FAF;
+	color:#fff;
+	font-size:2.1vh;
+}
+
+#desc
+{
+	top:15%;
+}
+
+#content-container
+{
+	position:absolute;
+	overflow-y:scroll;
+	height:80%;
+	width:100%;
+	top:20%;
+	left:0;
+}
+
+#content
+{
+	width:100%;
+}
+
+.latest
+{
+	height:30vh;
+}
+
+.left-curve
+{
+	border-top-left-radius:1vh;
+}
+
+.right-curve
+{
+	border-top-right-radius:1vh;
+}
+
+.button_logo
+{
+	height:0%;
+}
+
+.centered
+{
+	left:50%;
+	top:50%;
+	transform:translate(-50%,-50%);
+}
+
+.comfortaa
+{
+	font-family:'comfortaa',cursive;
+}

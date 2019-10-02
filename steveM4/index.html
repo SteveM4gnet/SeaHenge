@@ -1,0 +1,165 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="res/css/styles_default.css">
+<link id = 'pageStyle' rel="stylesheet" type="text/css" href="res/css/styles_desktop.css">
+<link href="https://fonts.googleapis.com/css?family=Comfortaa&display=swap" rel="stylesheet">
+<script src="res/js/scripts.js"></script>
+<title>SteveM4</title>
+</head>
+<body>
+<div id = 'profilePic'>
+	<div>
+		<p class = 'centered comfortaa'>About Steve</p>
+	</div>
+	<img
+		id = 'twitterIcon'
+		class = 'centered'
+		src = 'res/img/twitter_icon.jpg'
+		alt = 'Twitter Icon'
+	>	
+</div>
+
+<div id = 'banner'>
+	<div id = 'bannerText'>
+		<p class = 'comfortaa'>Steve's stuff</p>
+	</div>
+	<div id = 'bannerButtons' >
+		<button
+			class = 'comfortaa left-curve'
+			style = 'background:#00aced;'
+			>Twitter
+			<img
+				class = 'button_logo'
+				src = 'res/img/twitter_logo.png'
+			>
+		</button>
+		
+		<button
+			class = 'comfortaa' 
+			style = 'background:#FF0000;'
+			>YouTube
+			<img
+				class = 'button_logo'
+				src = 'res/img/youTube_logo.png'
+			>
+		</button>
+		
+		<button
+			class = 'comfortaa'
+			style = 'background:#ff7700;'
+			>Music
+			<img
+				class = 'button_logo'
+				src = 'res/img/soundcloud_logo.png'
+			>
+		</button>
+		<button
+			class = 'comfortaa right-curve'
+			style = 'background:#1A394E;'
+			>Mods
+			<img
+				class = 'button_logo'
+				src = 'res/img/steam_logo.png'
+			>
+		</button>
+	</div>
+</div>
+
+<div id = 'desc' class = 'centered'>
+	<p class = 'comfortaa'>
+	You have found my internet web thing.
+	From here you can see all the things I do.
+	This is a vague attempt at me getting my act together.
+	</p>
+</div>
+
+<div id = 'content-container'>
+	<div id = 'content' class = 'curve-top'>
+		<p class = 'comfortaa'>My latest</p>
+		<img
+			class = 'latest-logo'
+			src = 'res/img/twitter_logo_colour.png'
+		>
+			<div id = 'latest_tweet' class = 'latest'>
+			<a class="twitter-timeline" href="https://twitter.com/stevemagnet"
+			data-tweet-limit="1"
+			data-chrome = 'noheader noborders nofooter'
+			data-width = '940px'
+			>
+			</a>
+			<script async src="http://platform.twitter.com/widgets.js" charset="utf-8"></script>
+			<button class = 'expand' onclick = 'expand()'>
+			<img
+				class = 'button_logo'
+				src = 'res/img/expand_arrow.png'
+			>
+			</button>			
+		</div>	
+		
+		<img
+			class = 'latest-logo'
+			src = 'res/img/youTube_logo_colour.png'
+		>		
+		<div id = 'latest_youtube' class = 'latest'>
+			<iframe width="80%" height='340px' src="https://www.youtube.com/embed/suc6zGNJPCA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<button class = 'expand' onclick = 'expand()'>
+			<img
+				class = 'button_logo'
+				src = 'res/img/expand_arrow.png'
+			>
+			</button>
+		</div>
+		
+		<img
+			class = 'latest-logo'
+			src = 'res/img/soundcloud_logo_colour.png'
+		>	
+		<div id = 'latest_soundcloud' class = 'latest'>
+			<iframe width="80%" height="340px" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/694868549&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+			<button class = 'expand' onclick = 'expand()'>
+			<img
+				class = 'button_logo'
+				src = 'res/img/expand_arrow.png'
+			>
+			</button>
+		</div>
+		
+		<img
+			class = 'latest-logo'
+			src = 'res/img/steam_logo_colour.png'
+		>	
+		<div id = 'latest_steam' class = 'latest latest-steam'>
+			<div class = 'steam-workshop-item' height="340px">
+				<desc class = 'comfortaa steam-desc'>Experimental 'Balanced' 4-4-0</desc>
+				<desc class = 'comfortaa steam-desc steam-user'>A Workshop Item for Transport Fever</br>By: SteveM4</desc>
+				<img src = 'https://steamuserimages-a.akamaihd.net/ugc/768351114938719683/17FBE431616C4BC2BD5C795BD565EF7F8094D74C/'>
+				<iframe class = 'steam-workshop-item-iframe' width="100%" height="100%" src="https://www.transportfevermods.com/en/database.html?s=stevem4"></iframe>
+			</div>
+			<button class = 'expand' onclick = 'expand()'>
+			<img
+				class = 'button_logo'
+				src = 'res/img/expand_arrow.png'
+			>
+			</button>
+		</div>
+		
+		<div class = 'latest break min-height'>
+			<p class = 'comfortaa'>Chosen content</p>
+		</div>
+		
+		<div class = 'latest chosen'>
+		</div>
+		
+		<div class = 'latest chosen'>
+		</div>
+		
+		<div class = 'latest chosen'>
+		</div>
+		
+		<div class = 'latest chosen'>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
